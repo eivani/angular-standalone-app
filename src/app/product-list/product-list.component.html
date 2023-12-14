@@ -1,0 +1,14 @@
+<div class="container mx-auto">
+  <app-add-product (addProduct)="addProduct($event)"></app-add-product>
+  <div class="flex bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <input [(ngModel)]="searchText"
+      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline me-5"
+      id="username" type="text" placeholder="Username">
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      type="button" (click)="search()">
+      search
+    </button>
+  </div>
+  <app-item [items]="products" (selectedProduct)="detailsProduct($event)" (deletedProduct)="deletedProduct($event)"></app-item>
+</div>
